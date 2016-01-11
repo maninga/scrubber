@@ -4,7 +4,7 @@ exports.scrub = function (target, fn) {
       object.forEach(function (val, i) {
         scrub(val, i, object);
       })
-    } else if(typeof object == 'object') {   
+    } else if(typeof object === 'object' && object !== null) {   
       Object.keys(object).forEach(function (key) {
         scrub(object[key], key, object);
       })
